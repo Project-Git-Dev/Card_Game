@@ -1,0 +1,293 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('best-greek-mythology-9tlb3r6i5cjgnuqk.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    color: black;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+
+#navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    z-index: 1000;
+}
+
+#hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+}
+
+.line {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+#nav-menu {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 999;
+    display: none;
+}
+#nav-menu.visible {
+    display: block;
+}
+
+#nav-menu ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+}
+
+#nav-menu li {
+    padding: 10px 20px;
+}
+
+#nav-menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+#nav-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Flip Cards */
+.card {
+    width: 120px;
+    height: 240px;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    perspective: 1000px;
+    z-index: 1;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.card-front {
+    background-color: #fff;
+    z-index: 2;
+}
+
+.card-back {
+    background-color: #333;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: auto;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.card.common {
+    border: 2px solid #d3d3d3;
+    color: grey;
+}
+
+.card.rare {
+    border: 2px solid #FFA500;
+    color: #FFA500;
+}
+
+.card.epic {
+    border: 2px solid #800080;
+    color: #800080;
+}
+
+.card.legendary {
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white),
+    linear-gradient(to right, lightseagreen, lightblue, pink);
+    background-clip: padding-box, border-box;
+    padding: 0;
+    color: lightseagreen;
+}
+
+/* Extra elementen */
+.glow {
+    animation: glow 1000.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 255, 0, 0.5), 0 0 10px rgba(255, 255, 0, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 255, 0, 0.8), 0 0 30px rgba(255, 255, 0, 0.6);
+    }
+}
+
+#health-bar {
+    margin: 20px 0;
+}
+
+.health-bar {
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.health {
+    height: 100%;
+    background-color: #4caf50;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#ai-health {
+    height: 100%;
+    background-color: #f44336;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#player-hand {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#player-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0;
+}
+
+.mana {
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4a90e2;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #357abd;
+    transform: scale(1.05);
+}
+
+#nav-menu.visible {
+    display: block;
+}
+.avatar-option {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 10px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.avatar-option:hover {
+    border-color: #4a90e2;
+}
+.avatar-small {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: 10px;
+    border: 2px solid white;
+    object-fit: cover;
+}
+/* Welkom bericht + avatar */
+#welcome-message {
+    color: white;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+#welcome-message img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
